@@ -65,77 +65,58 @@ body of the loop must be indented.
 
 In this example, `creature` is the loop variable that takes the value of the next
 entry in `animals` every time the loop goes around. We can call the loop variable
-anything we like. After the loop finishes, the loop variable will still exist
+anything we like.
+For example, we could change the loop variable name to x, and it'd still work.
+After the loop finishes, the loop variable will still exist
 and will have the value of the last entry in the collection:
 
 ```python
 animals = ['lion', 'tiger', 'crocodile', 'vulture', 'hippo']
-for creature in animals:
-    pass
+for x in animals:
+    print('The current value of the loop variable is: ' + x)
+    
+print('At the end of the loop, the loop variable is: ' + x)
 ```
 
 ```output
-```
-
-```python
-print('The loop variable is now: ' + creature)
-```
-
-```output
-The loop variable is now: hippo
+The current value of the loop variable is: lion
+The current value of the loop variable is: tiger
+The current value of the loop variable is: crocodile
+The current value of the loop variable is: vulture
+The current value of the loop variable is: hippo
+At the end of the loop, the loop variable is: hippo
 ```
 
 We are not asking Python to print the value of the loop variable anymore, but
-the for loop still runs and the value of `creature` changes on each pass through
-the loop. The statement `pass` in the body of the loop means "do nothing".
+the for loop still runs and the value of `x` changes on each pass through
+the loop.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Challenge - Loops
 
-1. What happens if we don't include the `pass` statement?
-
-2. Rewrite the loop so that the animals are separated by commas, not new lines
-  (Hint: You can concatenate strings using a plus sign. For example,
-  `print(string1 + string2)` outputs 'string1string2').
+Rewrite the previous loop so you get a counter of each iteration of the loop. The output should look
+similar to this:
+```output
+0 - The current value of the loop variable is: lion
+1 - The current value of the loop variable is: tiger
+2 - The current value of the loop variable is: crocodile
+3 - The current value of the loop variable is: vulture
+4 - The current value of the loop variable is: hippo
+At the end of the loop, the loop variable is: hippo
+```
 
 ::::::::::::::::::::::: solution
 
-1. 
-    ```python
-    animals = ['lion', 'tiger', 'crocodile', 'vulture', 'hippo']
-    for creature in animals:
-    
-    ```
-    
-    ```error
-    IndentationError: expected an indented block
-    ```
+```python
+counter = 0
 
-2. Using the `end` argument to `print`:
+for x in animals:
+    print(counter, '- The current value of the loop variable is: ' + x)
+    counter = counter + 1
     
-    ```python
-    for creature in animals:
-        print(creature + ',', end='')
-    ```
-
-    ```output
-    lion,tiger,crocodile,vulture,hippo,
-    ```
-    
-   This puts a comma on the end of the list, which is not ideal.
-   To avoid this, we need to use an altogether different approach:
-   string objects in Python have a `join` method, 
-   which can be used to concatenate items in a list with the string in between, e.g.
-   
-    ```python
-    ', '.join(animals)
-    ```
-    
-    ```output
-    'lion, tiger, crocodile, vulture, hippo'
-    ```
-   
+print('At the end of the loop, the loop variable is: ' + x)
+```
 ::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -152,14 +133,15 @@ these files using the module `os`:
 ```python
 import os
 
-os.mkdir('data/yearly_files')
+os.makedirs('../data/yearly_files', exist_ok = True)
 ```
 
-The command `os.mkdir` is equivalent to `mkdir` in the shell. Just so we are
-sure, we can check that the new directory was created within the `data` folder:
+The command `os.makedirs` is equivalent to `mkdir` in the shell.
+The `exist_ok = True` will avoid a FileExistsError being raised, in case we run the code cell multiple times.
+Just so we are sure, we can check that the new directory was created within the `data` folder:
 
 ```python
-os.listdir('data')
+os.listdir('../data')
 ```
 
 ```output
@@ -184,13 +166,13 @@ that performs those three steps in sequence for the year 2002:
 import pandas as pd
 
 # Load the data into a DataFrame
-surveys_df = pd.read_csv('data/surveys.csv')
+surveys_df = pd.read_csv('../data/surveys.csv')
 
 # Select only data for the year 2002
 surveys2002 = surveys_df[surveys_df.year == 2002]
 
 # Write the new DataFrame to a CSV file
-surveys2002.to_csv('data/yearly_files/surveys2002.csv')
+surveys2002.to_csv('../data/yearly_files/surveys2002.csv')
 ```
 
 To create yearly data files, we could repeat the last two commands over and
@@ -240,44 +222,44 @@ Putting this into our for loop we get
 
 ```python
 for year in surveys_df['year'].unique():
-   filename='data/yearly_files/surveys' + str(year) + '.csv'
+   filename='../data/yearly_files/surveys' + str(year) + '.csv'
    print(filename)
 ```
 
 ```output
-data/yearly_files/surveys1977.csv
-data/yearly_files/surveys1978.csv
-data/yearly_files/surveys1979.csv
-data/yearly_files/surveys1980.csv
-data/yearly_files/surveys1981.csv
-data/yearly_files/surveys1982.csv
-data/yearly_files/surveys1983.csv
-data/yearly_files/surveys1984.csv
-data/yearly_files/surveys1985.csv
-data/yearly_files/surveys1986.csv
-data/yearly_files/surveys1987.csv
-data/yearly_files/surveys1988.csv
-data/yearly_files/surveys1989.csv
-data/yearly_files/surveys1990.csv
-data/yearly_files/surveys1991.csv
-data/yearly_files/surveys1992.csv
-data/yearly_files/surveys1993.csv
-data/yearly_files/surveys1994.csv
-data/yearly_files/surveys1995.csv
-data/yearly_files/surveys1996.csv
-data/yearly_files/surveys1997.csv
-data/yearly_files/surveys1998.csv
-data/yearly_files/surveys1999.csv
-data/yearly_files/surveys2000.csv
-data/yearly_files/surveys2001.csv
-data/yearly_files/surveys2002.csv
+../data/yearly_files/surveys1977.csv
+../data/yearly_files/surveys1978.csv
+../data/yearly_files/surveys1979.csv
+../data/yearly_files/surveys1980.csv
+../data/yearly_files/surveys1981.csv
+../data/yearly_files/surveys1982.csv
+../data/yearly_files/surveys1983.csv
+../data/yearly_files/surveys1984.csv
+../data/yearly_files/surveys1985.csv
+../data/yearly_files/surveys1986.csv
+../data/yearly_files/surveys1987.csv
+../data/yearly_files/surveys1988.csv
+../data/yearly_files/surveys1989.csv
+../data/yearly_files/surveys1990.csv
+../data/yearly_files/surveys1991.csv
+../data/yearly_files/surveys1992.csv
+../data/yearly_files/surveys1993.csv
+../data/yearly_files/surveys1994.csv
+../data/yearly_files/surveys1995.csv
+../data/yearly_files/surveys1996.csv
+../data/yearly_files/surveys1997.csv
+../data/yearly_files/surveys1998.csv
+../data/yearly_files/surveys1999.csv
+../data/yearly_files/surveys2000.csv
+../data/yearly_files/surveys2001.csv
+../data/yearly_files/surveys2002.csv
 ```
 
 We can now add the rest of the steps we need to create separate text files:
 
 ```python
 # Load the data into a DataFrame
-surveys_df = pd.read_csv('data/surveys.csv')
+surveys_df = pd.read_csv('../data/surveys.csv')
 
 for year in surveys_df['year'].unique():
 
@@ -285,7 +267,7 @@ for year in surveys_df['year'].unique():
     surveys_year = surveys_df[surveys_df.year == year]
 
     # Write the new DataFrame to a CSV file
-    filename = 'data/yearly_files/surveys' + str(year) + '.csv'
+    filename = '../data/yearly_files/surveys' + str(year) + '.csv'
     surveys_year.to_csv(filename)
 ```
 
@@ -297,21 +279,21 @@ just created to confirm that everything worked as expected.
 Notice that the code above created a unique filename for each year.
 
 ```python
-filename = 'data/yearly_files/surveys' + str(year) + '.csv'
+filename = '../data/yearly_files/surveys' + str(year) + '.csv'
 ```
 
 Let's break down the parts of this name:
 
 - The first part is some text that specifies the directory to store our
-  data file in (data/yearly\_files/) and the first part of the file name
-  (surveys): `'data/yearly_files/surveys'`
+  data file in (../data/yearly\_files/) and the first part of the file name
+  (surveys): `'../data/yearly_files/surveys'`
 - We can concatenate this with the value of a variable, in this case `year` by
   using the plus `+` sign and the variable we want to add to the file name: `+ str(year)`
 - Then we add the file extension as another text string: `+ '.csv'`
 
 Notice that we use single quotes to add text strings. The variable is not
 surrounded by quotes. This code produces the string
-`data/yearly_files/surveys2002.csv` which contains the path to the new filename
+`../data/yearly_files/surveys2002.csv` which contains the path to the new filename
 AND the file name itself.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -559,7 +541,7 @@ def one_year_csv_writer(this_year, all_data):
     surveys_year = all_data[all_data.year == this_year]
 
     # Write the new DataFrame to a csv file
-    filename = 'data/yearly_files/function_surveys' + str(this_year) + '.csv'
+    filename = '../data/yearly_files/function_surveys' + str(this_year) + '.csv'
     surveys_year.to_csv(filename)
 ```
 
@@ -627,7 +609,7 @@ function:
 
 ```python
 # Load the data into a DataFrame
-surveys_df = pd.read_csv('data/surveys.csv')
+surveys_df = pd.read_csv('../data/surveys.csv')
 
 # Create CSV files
 yearly_data_csv_writer(1977, 2002, surveys_df)
@@ -709,7 +691,7 @@ output to change.
        surveys_year = all_data[all_data.year == this_year]
        
        # Write the new DataFrame to a csv file
-       filename = 'data/yearly_files/function_surveys' + str(this_year) + '.csv'
+       filename = '../data/yearly_files/function_surveys' + str(this_year) + '.csv'
        surveys_year.to_csv(filename)
        return filename
    
@@ -732,7 +714,7 @@ output to change.
    ```
    
    ```output
-   ['data/yearly_files/function_surveys2000.csv', 'data/yearly_files/function_surveys2001.csv']
+   ['../data/yearly_files/function_surveys2000.csv', '../data/yearly_files/function_surveys2001.csv']
    ```
 
 ::::::::::::::::::::::::::::::::
