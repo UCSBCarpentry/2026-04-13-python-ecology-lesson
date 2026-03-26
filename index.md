@@ -7,7 +7,7 @@ Python is a general purpose programming language that is useful for writing scri
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## For Instructors
+**For Instructors**
 
 If you are teaching this lesson in a workshop, please see the
 [Instructor notes](instructors/instructor-notes.md).

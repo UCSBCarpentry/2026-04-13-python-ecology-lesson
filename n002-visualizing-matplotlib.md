@@ -559,7 +559,7 @@ Plots can be displayed in Jupyter notebooks, standalone HTML files, or be part o
                  hover_data="record_id")
   ```
 
-<iframe src="fig/n002_plotly_example.html" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="fig/n002_plotly_example.html" title="Interactive scatter plot of Hindfoot length vs weight" width="100%" height="600px" frameborder="0"></iframe>
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

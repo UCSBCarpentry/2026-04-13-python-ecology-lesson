@@ -5,7 +5,7 @@ title: Overview of Jupyter Notebooks
 ![](fig/00_0_jupyter_notebook_example.jpg){alt='Example Jupyter Notebook'}
 *Screenshot of a [Jupyter Notebook on quantum mechanics](https://github.com/jrjohansson/qutip-lectures) by Robert Johansson*
 
-### How the Jupyter notebook works
+## How the Jupyter notebook works
 
 After typing the command `jupyter notebook`, the following happens:
 
@@ -79,7 +79,7 @@ This workflow has several advantages:
 - It allows you to display figures next to the code that produces them
   to tell a complete story of the analysis.
 
-### How the notebook is stored
+## How the notebook is stored
 
 - The notebook file is stored in a format called JSON and has the suffix
   `.ipynb`.
@@ -88,14 +88,14 @@ This workflow has several advantages:
 - But this format allows Jupyter to mix software (in several languages) with
   documentation and graphics, all in one file.
 
-### Notebook modes: Command and Edit
+## Notebook modes: Command and Edit
 
 The notebook has two modes of operation: Command and Edit. Command mode lets
 you edit notebook level features; while, Edit mode lets you change the
 contents of a notebook cell. Remember a notebook is made up of a number of
 cells which can contain code, markdown, html, visualizations, and more.
 
-### Help and more information
+## Help and more information
 
 Use the **Help** menu and its options when needed.
 
