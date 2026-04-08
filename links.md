@@ -38,4 +38,4 @@
 [swc-releases]: https://github.com/swcarpentry/swc-releases
 [training]: https://carpentries.github.io/instructor-training/
 [yaml]: https://yaml.org/
-[lesson-setup]: ../learners/setup.md
+[lesson-setup]: https://github.com/UCSBCarpentry/2026-04-13-python-ecology-lesson/learners/setup.md
