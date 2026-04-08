@@ -42,11 +42,6 @@ If you prefer to use Python on your own computer, you may use the setup instruct
 Regardless of how you choose to install it, please make sure you have Python installed to
 version 3.x (e.g., 3.10 is fine and will continue to receive security patches unitl 2026-OCT-04).
 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::: discussion
-
 ## Required Python Libraries 
 The following packages are needed for this workshop: 
 
@@ -58,6 +53,8 @@ The following packages are needed for this workshop:
 
 All packages will have been automatically installed in the Jupyterhub Instance. 
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::: discussion
 ## Installing Pixi
 
 Select your operating system from the options below.
