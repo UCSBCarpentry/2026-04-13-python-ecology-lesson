@@ -35,7 +35,7 @@ general-purpose programming as well.
 
 For this workshop, we will use a web-based Python Environment, JupyterHub, That UCSB Letters and Science IT has setup for us: 
 
-[Use your UCSB NETID to sing into JupyterHub](https://carpentryworkshop.lsit.ucsb.edu/hub/login?next=%2Fhub%2F)
+[Use your UCSB NETID to sign into JupyterHub](https://carpentryworkshop.lsit.ucsb.edu/hub/login?next=%2Fhub%2F)
 
 If you prefer to use Python on your own computer, you may use the setup instructions below, but this is not required. 
 
