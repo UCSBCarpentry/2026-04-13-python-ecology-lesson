@@ -27,19 +27,36 @@ Specifically, we use the following data files:
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Installing Python and JupyterLab using Pixi
+## Using Python in Jupyterhub
 
 [Python][python] is a popular language for scientific computing, and great for
-general-purpose programming as well. Installing all of the scientific packages we use in the lesson
-individually can be a bit cumbersome, and therefore recommend using [Pixi](https://pixi.sh/latest/) by prefix.dev.
+general-purpose programming as well.
 
-Regardless of how you choose to install it, please make sure you install Python
+
+For this workshop, we will use a web-based Python Environment, JupyterHub, That UCSB Letters and Science IT has setup for us: 
+
+[Use your UCSB NETID to sing into JupyterHub](https://carpentryworkshop.lsit.ucsb.edu/hub/login?next=%2Fhub%2F)
+
+If you prefer to use Python on your own computer, you may use the setup instructions below, but this is not required. 
+
+Regardless of how you choose to install it, please make sure you have Python installed to
 version 3.x (e.g., 3.10 is fine and will continue to receive security patches unitl 2026-OCT-04).
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::: discussion
+
+## Required Python Libraries 
+The following packages are needed for this workshop: 
+
+- Pandas
+- Jupyter notebook
+- Numpy
+- Matplotlib
+- Plotnine 
+
+All packages will have been automatically installed in the Jupyterhub Instance. 
 
 ## Installing Pixi
 
@@ -88,7 +105,6 @@ Select your operating system from the options below.
 4. Close your Terminal window.
 
 ::::::::::::
-
 
 
 ## Add Python and required libraries
