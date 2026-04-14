@@ -22,6 +22,7 @@ Specifically, we use the following data files:
 - [surveys2001.csv](data/yearly_files/surveys2001.csv)
 - [surveys2002.csv](data/yearly_files/surveys2002.csv)
 
+You may also download the complete [data.zip](data.zip).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
