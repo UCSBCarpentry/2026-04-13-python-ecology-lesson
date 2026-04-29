@@ -511,7 +511,7 @@ fig.savefig('images/hindfoot_analysis.png')
 
 Put all this knowledge to practice and come up with your own plot of the Portal Teaching data set.
 Use a different combination of variables, or a different kind of plot.
-Here is the [pandas `pd.plot()` function documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html), where you can see what other values you can use in the `kind` argument.
+Here is the [pandas pd.plot() function documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html), where you can see what other values you can use in the `kind` argument.
 
 Save your plot to the "images" folder with a .pdf extension.
 

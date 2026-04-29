@@ -9,7 +9,7 @@ encounter setup issues, please file an issue with the tags 'High-priority'.
 
 ## Checking installations.
 
-In the [`episodes/files/scripts/check_env.py`](../episodes/files/scripts/check_env.py) directory, you will find a script called check\_env.py This checks the
+In the [episodes/files/scripts/check_env.py](../episodes/files/scripts/check_env.py) directory, you will find a script called check\_env.py This checks the
 functionality of the Anaconda install.
 
 By default, Data Carpentry does not have people pull the whole repository with all the scripts and
